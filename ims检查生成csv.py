@@ -7,17 +7,15 @@ import time
 import datetime
 
 # First Username and Password
-username_1 = 'support'
-password_1 = 'Cisco@456'
+username_1 = #Load as a user with username
+password_1 = #User's password 
 
 # The username and password needed for the second permission
-username_2 = '4awangguan'
-password_2 = 'Zhaoxin98$^'
+username_2 = #Control's username
+password_2 = #Password
 
 # Number base with available IP addresses (the last number of the whole address)
-number_base = ['202', '227', '250', '213', '229', '212', '245', '228', '194', '225', '230', '247', '211', '243',
-               '236', '244', '234', '223', '235', '246', '249', '210', '252', '251', '201', '248', "224", "29", "207",
-               "208", "231"] # "224", "29", "207", "208"，"231"
+number_base = [ #The database of last numbers of IP addresses ]
 
 def Username(username):
 
@@ -40,7 +38,7 @@ def loop(new):
     if new in number_base:
 
         # If in the base, print out the IP address and go directly to the telnet and then give a check
-        crt.Screen.Send('telnet ' + '218.206.118.' + new + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位' + new + ' /so lo0' + ' \r')
 
     else:
 
@@ -50,7 +48,7 @@ def loop(new):
         # False => Show the word on the screen visiable
         host_NEW = crt.Dialog.Prompt("输入IP地址最后一位：", "IP Address", '', False)
 
-        crt.Screen.Send('telnet ' + '218.206.118.' + host_NEW + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位' + host_NEW + ' /so lo0' + ' \r')
 
 def HostLog():
 
@@ -113,7 +111,7 @@ def mainFunction(host_name):
 
     # Wait for the key word and type the telnet code
     crt.Screen.WaitForString("#")
-    crt.Screen.Send('telnet ' + '218.206.118.' + host_name + ' /so lo0' + ' \r')
+    crt.Screen.Send('telnet ' + '#完整IP地址前三位' + host_name + ' /so lo0' + ' \r')
 
     # Type in the username and password for the permission
     Username(username_2)
