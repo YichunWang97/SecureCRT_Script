@@ -18,7 +18,7 @@ def main():
         crt.Screen.Send('telnet ' + '#完整IP地址前三位' + host_new + ' /so lo0' + ' \r')
 
     else:
-        crt.Screen.Send('telnet ' + '#完整IP地址前三位 + host + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位‘ + host + ' /so lo0' + ' \r')
 
     username_two = crt.Dialog.Prompt('输入用户名：', '用户', username_2, False)
 
