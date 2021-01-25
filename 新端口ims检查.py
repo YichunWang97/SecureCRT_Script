@@ -1,8 +1,8 @@
 # $language = "Python"
 # $interface = "1.0"
 
-username_2 = 'guankong'
-password_2 = 'LygYD123#@!'
+username_2 = #管控端口登陆用户名
+password_2 = #管控端口用户密码
 
 def main():
 
@@ -15,10 +15,10 @@ def main():
 
         host_new = crt.Dialog.Prompt("输入IP地址最后一位：", "IP Address", '', False)
 
-        crt.Screen.Send('telnet ' + '218.206.118.' + host_new + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位' + host_new + ' /so lo0' + ' \r')
 
     else:
-        crt.Screen.Send('telnet ' + '218.206.118.' + host + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位 + host + ' /so lo0' + ' \r')
 
     username_two = crt.Dialog.Prompt('输入用户名：', '用户', username_2, False)
 
