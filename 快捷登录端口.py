@@ -1,14 +1,13 @@
 # $language = "Python"
 # $interface = "1.0"
 
-username_1 = 'support'
-password_1 = 'Cisco@456'
+username_1 = 'support' #登陆权限用户名
+password_1 = 'Cisco@456' #用户密码
 
-username_2 = 'guankong'
-password_2 = 'LygYD123#@!'
+username_2 = #管控端口用户名
+password_2 = #管控端口密码
 
-number_base = [202, 227, 250, 213, 229, 212, 245, 228, 194, 225, 230, 231, 247, 211, 243, 236,
-               244, 234, 223, 235, 224, 246, 249, 210, 252, 251, 201, 29, 248, 207, 208]
+number_base = [ #IP地址最后一位 ] #建立IP地址数据集
 
 def main():
     username_one = crt.Dialog.Prompt('输入用户名： ', '用户', username_1, False)
@@ -42,17 +41,17 @@ def main():
 
         host_new = crt.Dialog.Prompt("输入IP地址最后一位：", "IP Address", '', False)
 
-        crt.Screen.Send('telnet ' + '218.206.118.' + host_new + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位' + host_new + ' /so lo0' + ' \r')
 
     if host in [29, 300]:
-        crt.Screen.Send('telnet ' + '218.206.118.' + host + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位' + host + ' /so lo0' + ' \r')
 
     else:
         crt.Dialog.MessageBox('请输入正确的IP地址！', 'ERROR', 16 | 0)
 
         host_new_base = crt.Dialog.Prompt("输入IP地址最后一位：", "IP Address", '', False)
 
-        crt.Screen.Send('telnet ' + '218.206.118.' + host_new_base + ' /so lo0' + ' \r')
+        crt.Screen.Send('telnet ' + '#完整IP地址前三位' + host_new_base + ' /so lo0' + ' \r')
 
     #crt.Screen.WaitForString('Username:',2)
     #crt.Screen.Send(username_2 + ' \r')
